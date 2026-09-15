@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Aaron John C. Galario</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body, html {
+            height: 100%;
+            background-color: #0e0a08;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            background: radial-gradient(circle at 50% 20%, #2a1c14 0%, #0e0a08 70%);
+        }
+
+        #cover-container {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        /* Entrance animation */
+        #cover-container.intro-hidden {
+            opacity: 0;
+            transform: translate(-50%, -40%);
+        }
+
+        #cover-container.intro-visible {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Exit animation on click */
+        #cover-container.fade-out {
+            opacity: 0;
+            transform: translate(-50%, -60%);
+        }
+
+        #cover-container h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            letter-spacing: 3px;
+            color: #fff;
+            margin-bottom: 12px;
+            text-shadow: 0 0 20px rgba(255,176,96,0.4);
+        }
+
+        #cover-container p {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            color: #EB9C75;
+            margin-bottom: 40px;
+        }
+
+        .enter-btn {
+            padding: 14px 36px;
+            font-size: 1rem;
+            border: 2px solid #ff1818;
+            background: transparent;
+            color: #ff1818;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .enter-btn:hover {
+            background: #ff1818;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(255,24,24,0.5);
+            transform: scale(1.05);
+        }
+
+        .subtitle-line {
+            width: 60px;
+            height: 2px;
+            background: #EB9C75;
+            margin: 0 auto 20px auto;
+        }
+
+        #flash-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #fff;
+            opacity: 0;
+            z-index: 9999;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        #flash-overlay.flash {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div id="flash-overlay"></div>
+
+    <div id="cover-container" class="intro-hidden">
+        <h1>Aaron John C. Galario</h1>
+        <div class="subtitle-line"></div>
+        <p>Welcome to my Digital Portfolio</p>
+        <button class="enter-btn" onclick="transitionToMain(event)">Enter Portfolio</button>
+    </div>
+
+    <script>
+        /* ── Ember particle background (same as main site) ── */
+        (function () {
+            const canvas = document.getElementById("bg-canvas");
+            const ctx = canvas.getContext("2d");
+            let width, height, particles;
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+
+            function createParticles(count) {
+                const arr = [];
+                for (let i = 0; i < count; i++) {
+                    arr.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        r: Math.random() * 1.8 + 0.4,
+                        speedY: Math.random() * 0.4 + 0.1,
+                        speedX: (Math.random() - 0.5) * 0.3,
+                        alpha: Math.random() * 0.5 + 0.2,
+                        flicker: Math.random() * 0.02 + 0.005
+                    });
+                }
+                return arr;
+            }
+
+            function init() {
+                resize();
+                const count = Math.min(120, Math.floor((width * height) / 12000));
+                particles = createParticles(count);
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, width, height);
+                for (const p of particles) {
+                    p.y -= p.speedY;
+                    p.x += p.speedX;
+                    p.alpha += (Math.random() - 0.5) * p.flicker;
+                    p.alpha = Math.max(0.1, Math.min(0.7, p.alpha));
+                    if (p.y < -10) { p.y = height + 10; p.x = Math.random() * width; }
+                    if (p.x < -10) p.x = width + 10;
+                    if (p.x > width + 10) p.x = -10;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = "rgba(255, 176, 96, " + p.alpha + ")";
+                    ctx.shadowColor = "rgba(255, 140, 60, 0.8)";
+                    ctx.shadowBlur = 4;
+                    ctx.fill();
+                }
+                requestAnimationFrame(draw);
+            }
+
+            window.addEventListener("resize", () => {
+                resize();
+                particles = createParticles(Math.min(120, Math.floor((width * height) / 12000)));
+            });
+
+            init();
+            requestAnimationFrame(draw);
+        })();
+
+        /* ── Intro entrance animation ── */
+        window.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                document.getElementById("cover-container").classList.remove("intro-hidden");
+                document.getElementById("cover-container").classList.add("intro-visible");
+            }, 300);
+        });
+
+        /* ── Click to enter with flash transition ── */
+        function transitionToMain(e) {
+            e.stopPropagation();
+            const container = document.getElementById("cover-container");
+            const flash = document.getElementById("flash-overlay");
+
+            container.classList.add("fade-out");
+
+            setTimeout(() => {
+                flash.classList.add("flash");
+            }, 500);
+
+            setTimeout(() => {
+                window.location.href = "FINAL_PROJECT.html";
+            }, 900);
+        }
+    </script>
+</body>
+</html>
