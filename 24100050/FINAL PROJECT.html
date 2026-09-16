@@ -1,76 +1,103 @@
 <!DOCTYPE html>
-<html>
-<html lang = "en">
-<head><meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header id="nav-header">
-	<div class = "container">
-	<nav>
-<ul> 
-<li><a href="#" onclick ="showHome()">|Home|</a></li>
-<li><a href="#" onclick ="showAbout()">|About|</a></li>
-<li><a href="#" onclick ="showTopics()">|Projects|</a></li>
-<li><a href="#" onclick ="showContact()">|Contact|</a></li>
-</ul>
-</nav>
-</div>
+<html lang="en">
+<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G's Portfolio</title><link rel="stylesheet" href="style.css"></head>
+<body class="page-hidden">
+<canvas id="bg-canvas"></canvas>
+<div id="page-intro-overlay"></div>
+<header id="nav-header"><div class="container"> 
+<nav><ul>
+<li><a href="#" onclick="showHome()">Home</a></li>
+<li><a href="#" onclick="showAbout()">About</a></li>
+<li><a href="#" onclick="showTopics()">Projects</a></li>
+<li><a href="#" onclick="showContact()">Contact</a></li>
+</ul></nav></div>
 </header>
-<div class ="showcase">
-	<div class ="container">
+<div class="showcase">
+<div class="container">
 <h1>Aaron John C. Galario</h1>
-<h1 class="rotating-text">
-  I am a <span id="word-swap">Vibe Programmer</span>
-</h1></div>
-</div>
-<section id ="home" class="container blog">
+<h1 class="rotating-text">I am a <span id="word-swap">Vibe Programmer</span></h1>
+</div></div>
+<section id="home" class="container blog">
 <h1><center>Hello!</center></h1>
-<p>This personal developer portfolio project was created for the intention to share 
-    information and knowledge about me.As you explore this website, you'll discover 
-    my journey, skills, and passion for technology. I am disciplined, competent, active,
- and always eager to learn and work together.</p><br>
-<strong><h2>Basically, you'll get to know what makes 
-    Aaron John C. Galario different... </h2></strong></ol>
+<div style="text-align: center; margin-top: 15px;">
+<img src="IMG_20251228_124620_750.jpg" alt="Aaron John" style="max-width: 40%; height: auto; border-radius: 10px;"></div>
+<p>This personal developer portfolio project was created for the intention to share information and knowledge about me. As you explore this website, you'll discover
+my journey, skills, and passion for technology. For me to tell you about my skills, this personal
+portfolio will have projects that I contributed and built in my time as a 
+student, participant, hobbyist, and etc. Although, some of these projects focus
+mainly in developing websites or UI/UX creativity, this shall explain my knowledge as an asset
+for development companies. As part of my character, I am disciplined, competent, active,
+and always eager to learn and work together for the benefit of improvement.</p><br>
+<strong><i><h2>Technology isn't just a tool; it's the language of our future.</h2></i></strong>
 </section>
- <section id="about" class="container blog">
-        <h2 class = "rotating-text">About the <span id = "word-swap-2">Vibe Programmer</span></h2>
-<img src ="B13 GALARIO (WC).jpg" align= "right">
-        <p>I am Aaron John C. Galario, a 21 year-old, graduated from St. Alphonsus Catholic School(Lapu-Lapu City, Cebu)Inc. and completed elementary and secondary levels. I graduated as a STEM graduate in their program and enrolled in the University of San Carlos to be an Information Technology Graduate 
-            and to immerse myself to the world that be dependent on technology and digital advancement. As a programmer, I aim to advocate the purpose of my academics and use my skills from Information Technology in today's time. Throughout my experience, it has been a rollercoaster of innovation, creativity, work, focus, fun, and
-            practice to understand and challenge myself to adapt on how and what the world will become with its technology.</p>
-    </section>
-
-<section id ="projects" class="container blog">
-<h1>Projects</h1>
-<p>In this portion, we'll explore various projects I was involved with. With the help of Artificial Intelligence 
-    <i>(AI)</i> and digital media platforms, I am able to showcase with ease and efficiency .</p>
-<br></br>
-<h1> LakBai: Car Rental and Transportation Service Website</h1>
-
-<h1> CebuGuide: Smart Tourism App for Cebu City, Philippines</h1>
-
-<h1> G-Blog Portfolio </h1>
-
-<h1> Cosmic Restoration</h1>
-
-<h1> Other Hobby projects</h1>
-</p>
-
-
-<section id="contact" class="container blog">
-        <h2>Contact</h2>
-        <p>My contact details:</p>
-        <p>GitHub:<a href="https://github.com/AJGalario">AJGalario</a></p>
-        <p>Phone: 09567322720(Globe) / 09932685450(DITO)</p>
-        <p>Email: 24100050@usc.edu.ph / galario.aaronjohn@gmail.com
-	<p>Facebook Messenger: <a href="https://www.facebook.com/aaronjohn.galario">Aaron John Galario</a></p>
-	<p>Instagram: <a href="https://www.instagram.com/aarongalario/profilecard/?igsh=aHAyOHZlczBycTJ0">AJ Galario</a></p>
-    </section>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<section id="about" class="container blog">
+<h2 class="rotating-text">About the <span id="word-swap-2">Vibe Programmer</span></h2>
+<img src="IMG_20260101_162823_464.jpg" align="right"><p>I am Aaron John C. Galario, a 21 year-old, graduated from St. Alphonsus Catholic School (Lapu-Lapu City, Cebu) Inc. 
+and completed elementary and secondary levels. I graduated as a STEM graduate in their program and enrolled in the 
+University of San Carlos to be an Information Technology Graduate and to immerse myself to the world that be dependent 
+on technology and digital advancement. As a programmer, I aim to advocate the purpose of my academics and use my skills 
+from Information Technology in today's time. Throughout my experience, it has been a rollercoaster of innovation, creativity, 
+work, focus, fun, and practice to understand and challenge myself to adapt on how and what the world will become with its technology.</p>
+</section>
+<section id="projects" class="container blog">
+<h1><center>Projects</center></h1>
+<p>In this portion, we'll explore various projects I was involved with. With the help of Artificial Intelligence
+<i>(AI)</i> and digital media platforms, I am able to showcase with ease and efficiency.</p> 
+<div class="project-grid">
+<div class="project-card" data-title="LakBai" data-desc="A Car Rental and Transportation Service Website designed to help users easily browse, book, and manage vehicle rentals with a clean, user-friendly interface.">
+<div class="media-carousel"><div class="media-container">
+<img src="Screenshot 2026-09-15 073639.png" alt="LakBai Screenshot">
+</div>
+<div class ="media-container" style="display: none;">
+<video controls playsinline><source src="Screen Recording 2026-09-15 071226.mp4" type="video/mp4"></video></div>
+<button class="carousel-btn prev-btn" onclick="prevMedia(this)">❮</button><button class="carousel-btn next-btn" onclick="nextMedia(this)">❯</button></div>
+<div class="card-content"><h3>LakBai</h3>
+<p>Car Rental and Transportation Service Website</p>
+<span class="view-label">Click to expand</span></div></div>
+<div class="project-card" data-title="CebuGuide" data-desc="A Smart Tourism App designed for Cebu City, Philippines that is developed in helping tourists discover local spots, navigate the city, and experience Cebu more efficiently using digital tools and AI.">
+<div class="media-carousel"><div class="media-container">
+<img src="680483080_1484766649976910_690030951623785510_n.png" alt="Cebu Guide"></div>
+<div class="media-container" style="display: none;"><iframe src="https://drive.google.com/file/d/187uzuf2YaG-jW4t5TpBtk3DeB6zVS8rm/preview" style="width: 100%; aspect-ratio: 16/9; border: none; border-radius: 8px;"></iframe></div>
+<button class="carousel-btn prev-btn" onclick="prevMedia(this)">❮</button><button class="carousel-btn next-btn" onclick="nextMedia(this)">❯</button></div>
+<div class="card-content"><h3>CebuGuide</h3><p>Smart Tourism App for Cebu City, Philippines</p>
+<span class="view-label">Click to expand</span></div></div>
+<div class="project-card" data-title="G-Blog Portfolio" data-desc="A personal blog and portfolio website of Galario that showcase skills, projects, and topics discussed in a creative and structured layout, serving as a digital presence and professional identity.">
+<div class="media-carousel"><div class="media-container"><img src="Screenshot 2026-03-01 205112.png" alt="G-Blog Screenshot"></div> 
+<div class="media-container" style= "display:none"><video controls playsinline><source src="Screen Recording 2026-09-14 171153.mp4" type="video/mp4"></video></div>
+<button class="carousel-btn prev-btn" onclick="prevMedia(this)">❮</button><button class="carousel-btn next-btn" onclick="nextMedia(this)">❯</button></div>
+<div class="card-content"><h3>G-Blog Portfolio</h3><p>A personal blog and portfolio project</p>
+<span class="view-label">Click to expand</span></div></div>
+<div class="project-card" data-title="GDGoC - Web Development" data-desc="A website meant to showcase skills, projects, and experiences in a creative and structured layout, with a twist of trying to be simple and basic in creating a website.">
+<div class="media-carousel"><div class="media-container">
+<img src="Screenshot 2026-09-15 074125.png" alt="GDGoC Screenshot"></div><div class="media-container" style="display:none">
+<video controls playsinline><source src="Screen Recording 2026-09-13 232248.mp4" type="video/mp4"></video></div>
+<button class="carousel-btn prev-btn" onclick="prevMedia(this)">❮</button><button class="carousel-btn next-btn" onclick="nextMedia(this)">❯</button></div>
+<div class="card-content"><h3>UI / UX GD</h3><p>A simple digital media project contest held by an organization in the University of San Carlos - Talamban, GDGoC</p>
+<span class="view-label">Click to expand</span></div></div>
+<div class="project-card" data-title="Cosmic Restoration" data-desc="An exploratory digital media project that blends visual storytelling, creative design, and technology. A game development project exploring themes of 2D pixel video entertainment in cosmic aesthetics."><div class="media-carousel">
+<div class="media-container">
+<img src="Screenshot 2026-05-16 141643.png" alt="Cosmic Restoration"></div>
+<div class="media-container" style="display: none;"><video controls playsinline><source src="05022026 game check.mp4" type="video/mp4"></video></div>
+<button class="carousel-btn prev-btn" onclick="prevMedia(this)">❮</button><button class="carousel-btn next-btn" onclick="nextMedia(this)">❯</button></div>
+<div class="card-content"><h3>Cosmic Restoration</h3><p>An exploratory digital media project</p><span class="view-label">Click to expand</span></div></div>
+<div class="project-card" data-title="Other Hobby Projects" data-desc="A collection of various passion projects, experiments, and side works developed during leisure time. These reflect curiosity, creativity, and a constant drive to build and explore new ideas.">
+<div class="media-carousel"><div class="media-container">
+<img src="UI UX Prototype Clone Application.png" alt="Hobby Project 1"></div>
+<div class="media-container" style="display: none;"><img src="Screenshot 2026-09-13 231802.png" alt="Hobby Project 2"></div>
+<div class="media-container" style="display: none;"><img src="Screenshot 2026-09-13 231721.png" alt="Hobby Project 2"></div>
+<div class="media-container" style="display: none;"><video controls playsinline><source src="Screen Recording 2026-09-13 232248.mp4" type="video/mp4"></video></div>
+<button class="carousel-btn prev-btn" onclick="prevMedia(this)">❮</button><button class="carousel-btn next-btn" onclick="nextMedia(this)">❯</button></div>
+<div class="card-content"><h3>Other Hobby Projects</h3><p>Various experiments and side projects</p><span class="view-label">Click to expand</span></div></div></div></section>
+<section id="contact" class="container blog"><h2>Contact</h2>
+<p>My contact details:</p>
+<p>GitHub: <a href="https://github.com/AJGalario">AJGalario</a></p>
+<p>Phone: 09567322720 (Globe) / 09932685450 (DITO)</p>
+<p>Email: 24100050@usc.edu.ph / galario.aaronjohn@gmail.com</p>
+<p>Facebook Messenger: <a href="https://www.facebook.com/aaronjohn.galario">Aaron John Galario</a></p>
+<p>Instagram: <a href="https://www.instagram.com/aarongalario/profilecard/?igsh=aHAyOHZlczBycTJ0">AJ Galario</a></p></section>
+<div id="project-modal" class="modal" role="dialog" aria-modal="true"><div class="modal-content"><span class="close-btn" onclick="closeModal()" title="Close">&times;</span>
+<div id="modal-media-wrapper"><div id="modal-media-container"></div><button class="modal-carousel-btn prev-modal-btn" onclick="prevModalMedia()" style="display:none;">❮</button>
+<button class="modal-carousel-btn next-modal-btn" onclick="nextModalMedia()" style="display:none;">❯</button></div><div id="modal-text-container"><h2 id="modal-title"></h2><p id="modal-desc"></p></div></div></div>
+<script src="script.js"></script>
+</body></html>

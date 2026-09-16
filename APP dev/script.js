@@ -1,4 +1,4 @@
-﻿// ──────────────────────────────────────────
+// ──────────────────────────────────────────
 // Section Switcher
 // ──────────────────────────────────────────
 function showSection(id) {
@@ -85,6 +85,7 @@ document.querySelectorAll(".project-card").forEach(card => {
         mediaElements.forEach((element, index) => {
             const img = element.querySelector("img");
             const video = element.querySelector("video");
+            const iframe = element.querySelector("iframe");
             
             let mediaDiv = document.createElement("div");
             mediaDiv.className = "modal-media-item";
@@ -101,6 +102,12 @@ document.querySelectorAll(".project-card").forEach(card => {
                 newVideo.controls = true;
                 newVideo.playsInline = true;
                 mediaDiv.appendChild(newVideo);
+            } else if (iframe) {
+                const newIframe = iframe.cloneNode(true);
+                newIframe.style.width = "100%";
+                newIframe.style.height = "50vh";
+                newIframe.style.border = "none";
+                mediaDiv.appendChild(newIframe);
             }
             
             mediaContainer.appendChild(mediaDiv);
